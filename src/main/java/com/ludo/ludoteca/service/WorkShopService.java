@@ -1,12 +1,16 @@
 package com.ludo.ludoteca.service;
 
+import com.ludo.ludoteca.exceptions.APIExceptions;
 import com.ludo.ludoteca.mapper.WorkShopInDTOtoWorkShop;
 import com.ludo.ludoteca.persistence.entity.WorkShop;
 import com.ludo.ludoteca.persistence.repository.WorkShopRepository;
 import com.ludo.ludoteca.service.dto.WorkShopInDTO;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class WorkShopService {
@@ -31,5 +35,34 @@ public class WorkShopService {
     //obtener los talleres
     public List<WorkShop> findAll() {
         return this.repository.findAll();
+    }
+
+    //obtener un taller
+    public Optional<WorkShop> findById(Long id)
+    {
+        Optional<WorkShop> optionalWorkShop = this.repository.findById(id);
+        return optionalWorkShop;
+    }
+
+
+    @Transactional
+    public void uptadeWorkShopAsExecuted(Long id)
+    {
+        Optional<WorkShop> optionalWorkShop = this.repository.findById(id);
+        if(optionalWorkShop.isEmpty())
+        {
+            throw new APIExceptions("Task not found", HttpStatus.NOT_FOUND);
+        }
+        this.repository.maskWorkShopAsExecuted(id);
+    }
+
+    public void deleteById(Long id)
+    {
+        Optional<WorkShop> optionalWorkShop = this.repository.findById(id);
+        if(optionalWorkShop.isEmpty())
+        {
+            throw new APIExceptions("Task not found", HttpStatus.NOT_FOUND);
+        }
+        this.repository.deleteById(id);
     }
 }
