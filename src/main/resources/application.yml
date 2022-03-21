@@ -5,7 +5,7 @@ spring:
     driver-class-name: org.postgresql.Driver
     username: gwvmptardcckaq
     password: c1375d4216d72e1081b1c85fba1fee88a7c138a70a5a7e0fa0e5626c9b4e1cb6
-    url: "jdbc:postgresql://ec2-52-204-213-254.compute-1.amazonaws.com:5432/dd2n03kk0664svh?sslmode=require"
+    url: "jdbc:postgresql://ec2-52-204-213-254.compute-1.amazonaws.com:5432/d2n03kk0664svh?sslmode=require"
   jpa:
     show-sql: true
     database: postgresql
@@ -13,6 +13,4 @@ spring:
     open-in-view: false
     generate-ddl: true
     hibernate:
-      ddl-auto: create-drop
-server:
-  port: 8091
+      ddl-auto: none
