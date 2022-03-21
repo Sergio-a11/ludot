@@ -1,1 +1,1 @@
-heroku ps:scale web=1
+web: java -Dserver.port=$PORT -jar build/libs/*.jar
