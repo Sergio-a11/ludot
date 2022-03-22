@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Ludoteca</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <nav class="navbar navbar-dark bg-primary mb-5">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-dice-5 d-inline-block align-text-top" viewBox="0 0 16 16">
+                    <path d="M13 1a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h10zM3 0a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V3a3 3 0 0 0-3-3H3z"/>
+                    <path d="M5.5 4a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm8 0a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0 8a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm-8 0a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm4-4a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+                </svg>
+                Ludoteca
+              </a>
+            </div>
+          </nav>
+          <div  class="container mt-5">
+            <a href="crearTaller.html">
+            <div class="d-grid gap-2 mt-5 mb-5 pt-3 pb-3">
+                <button class="btn btn-primary" type="button">Crear Taller</button>
+            </div>
+            </a>
+            <p class="fs-3">Lista de talleres</p>
+            <div id="talleres">
+                <div class="btn-group">
+                    <a href="verTaller.html" class="text-light text-decoration-none">
+                    <button class="btn btn-secondary btn-lg" type="button">
+                    Talle 1 de origami - 22 de marzo de 2022 8:AM
+                    <a href="verTaller.html"><span class="badge rounded-pill bg-primary">Ver más</span></a>
+                    </button>
+                    </a>
+                    <button type="button" class="btn btn-lg btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                    <span class="visually-hidden">Toggle Dropdown</span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="verTaller.html"><button class="dropdown-item" type="button">Ver</button></a></li>
+                        <li><button class="dropdown-item" type="button">Actualizar</button></li>
+                        <li><button class="dropdown-item" type="button">Eliminar</button></li>
+                        <li><button class="dropdown-item" type="button">Marcar como realizado</button></li>
+                    </ul>
+                </div>
+                <hr class="dropdown-divider">
+            </div>
+        </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="js/cargarTalleres.js"></script>
+</body>
+</html>

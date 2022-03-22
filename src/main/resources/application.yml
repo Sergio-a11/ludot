@@ -3,9 +3,12 @@ spring:
     name: ludoteca
   datasource:
     driver-class-name: org.postgresql.Driver
-    username: gwvmptardcckaq
-    password: c1375d4216d72e1081b1c85fba1fee88a7c138a70a5a7e0fa0e5626c9b4e1cb6
-    url: "jdbc:postgresql://ec2-52-204-213-254.compute-1.amazonaws.com:5432/d2n03kk0664svh?sslmode=require"
+    #username: gwvmptardcckaq
+    #password: c1375d4216d72e1081b1c85fba1fee88a7c138a70a5a7e0fa0e5626c9b4e1cb6
+    #url: "jdbc:postgresql://ec2-52-204-213-254.compute-1.amazonaws.com:5432/d2n03kk0664svh?sslmode=require"
+    username: ${JDBC_DATABASE_USERNAME}
+    password: ${JDBC_DATABASE_PASSWORD}
+    url: ${JDBC_DATABASE_URL}
   jpa:
     show-sql: true
     database: postgresql
