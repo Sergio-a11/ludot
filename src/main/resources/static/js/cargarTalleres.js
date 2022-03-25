@@ -39,9 +39,8 @@ async function cargarTalleres()
             </button>
             <ul class="dropdown-menu">
                 <li><a href="verTaller.html/?id=${t.id}"><button class="dropdown-item" type="button">Ver</button></a></li>
-                <li><button class="dropdown-item" type="button">Actualizar</button></li>
-                <li><button class="dropdown-item" type="button">Eliminar</button></li>
-                <li><button class="dropdown-item" type="button">Marcar como realizado</button></li>
+                <li><a href="actualizarTaller.html?id=${t.id}"><button class="dropdown-item" type="button">Actualizar</button></a></li>
+                <li><button class="dropdown-item" type="button" onclick="eliminarTaller(${t.id})">Eliminar</button></li>
             </ul>
         </div>
         <hr class="dropdown-divider">`;
@@ -64,14 +63,14 @@ function getHeaders()
 
 async function eliminarTaller(id)
 {
-    if(!confirm('¿Desea eliminar este usaurio?'))
+    if(!confirm('¿Desea eliminar este taller?'))
     {
         return;
     }
-    const request = await fetch('workshop/' + id, {
+    const request = await fetch(`../workshop/${id}`, {
     method: 'DELETE',
     headers: getHeaders()
     });
 
-    location.reload();
+    location.href = "../index.html";
 }

@@ -53,4 +53,9 @@ public class WorkShopController {
         return ResponseEntity.noContent().build();
     }
 
+    @PutMapping("/{id}")
+    public WorkShop updateWorkShop(@RequestBody WorkShop workShop)
+    {
+        return this.workShopService.updateWorkShop(workShop);
+    }
 }

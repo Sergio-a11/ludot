@@ -5,6 +5,7 @@ import com.ludo.ludoteca.mapper.WorkShopInDTOtoWorkShop;
 import com.ludo.ludoteca.persistence.entity.WorkShop;
 import com.ludo.ludoteca.persistence.repository.WorkShopRepository;
 import com.ludo.ludoteca.service.dto.WorkShopInDTO;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -34,7 +35,7 @@ public class WorkShopService {
 
     //obtener los talleres
     public List<WorkShop> findAll() {
-        return this.repository.findAll();
+        return this.repository.findAll(Sort.by(Sort.Direction.DESC, "executionDate"));
     }
 
     //obtener un taller
@@ -64,5 +65,10 @@ public class WorkShopService {
             throw new APIExceptions("Task not found", HttpStatus.NOT_FOUND);
         }
         this.repository.deleteById(id);
+    }
+
+    public WorkShop updateWorkShop(WorkShop workShop)
+    {
+        return this.repository.save(workShop);
     }
 }
