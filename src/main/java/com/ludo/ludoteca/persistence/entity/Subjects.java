@@ -1,0 +1,5 @@
+package com.ludo.ludoteca.persistence.entity;
+
+public enum Subjects {
+    ARTES, BIOLOGIA, EDUCACION_FISICA, ESPANOL, ETICA, FISICA, GENERAL, INFORMATICA, INGLES, MATEMATICAS, QUIMICA, RELIGION, SOCIALES, TECNOLOGIA
+}
