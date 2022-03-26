@@ -18,13 +18,23 @@ async function verTaller()
     });
     const taller = await request.json();
     let date = new Date(taller.executionDate);
-    let date2 = 'Fecha: '+ date.getFullYear()+ '/' + (date.getMonth()+1) + '/' + date.getDate() + ' - Hora: ' + date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds();
-    let txt = `<p class="fs-2">${taller.title}</p>
-    <p class="fs-4">${taller.description}</p>
-    <p class="fs-3">${taller.material}</p>
-    <p><span class="badge bg-primary">${date2}</span>  <span class="badge bg-danger">${taller.location}</span></p>
-    <a href="../actualizarTaller.html?id=${taller.id}"><button class="btn btn-secondary" type="button">Modificar</button></a>
-    <button class="btn btn-secondary" type="button" onclick="eliminarTaller(${taller.id})">Eliminar</button>
+    let date2 = ' Año '+ date.getFullYear()+ ' Mes: ' + (date.getMonth()+1) + ' Día: ' + date.getDate() + ' - Hora: ' + date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds();
+    let txt = `
+    <div class="card text-center">
+        <h3 class="card-header">
+            ${taller.title}
+        </h3>
+        <div class="card-body">
+            <h5 class="card-title">${taller.description}</h5>
+            <p class="card-text">Material: ${taller.material}</p>
+            <p>Fecha: <span class="badge bg-primary">${date2}</span>  Ubicación: <span class="badge bg-danger">Sede ${taller.location}</span></p>
+        </div>
+        <div class="card-footer text-muted">
+        <a href="../actualizarTaller.html?id=${taller.id}"><button class="btn btn-secondary" type="button">Modificar</button></a>
+        <button class="btn btn-secondary" type="button" onclick="eliminarTaller(${taller.id})">Eliminar</button>
+        <a href="../index.html"><button class="btn btn-secondary" type="button">Inicio</button></a>
+        </div>
+    </div>
     `;
     document.querySelector("#txt").outerHTML = txt;
 }

@@ -57,7 +57,7 @@ async function modificarTaller()
         return;
 
 
-    console.log(datos);
+    //console.log(datos);
     //espera a la petición url por el get y indica que es contenido de tipo json
     const request = await fetch(`../workshop/${datos.id}`, {
         method: 'PUT',

@@ -14,6 +14,7 @@ public class Tutoring {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long Id;
     private String NID;
+    private String number;
     private String full_name;
     private Courses course;
     private Subjects subject;

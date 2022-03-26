@@ -25,7 +25,7 @@
           <form>
             <div class="input-group mt-3 mb-3">
                 <span class="input-group-text" id="basic-addon1">Titulo</span>
-                <input type="text" class="form-control" placeholder="Taller de origami" aria-label="Username" aria-describedby="basic-addon1" id="txtTitle">
+                <input type="text" class="form-control" placeholder="Taller de origami" aria-label="Username" aria-describedby="basic-addon1" id="txtTitle" required>
             </div>
             <div class="input-group mb-3">
                 <span class="input-group-text">Descripción</span>
@@ -44,7 +44,7 @@
             </div>
             <div class="input-group mb-3">
                 <span class="input-group-text">Fecha de realización</span>
-                <input type="datetime-local" class="form-control" id="executionDate">
+                <input type="datetime-local" class="form-control" id="executionDate" required>
             </div>
             <div class="d-grid gap-2 mt-3">
             <button onclick="crearTaller()" class="btn btn-primary">Guardar Información</button>

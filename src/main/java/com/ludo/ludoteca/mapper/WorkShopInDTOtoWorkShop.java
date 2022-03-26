@@ -17,7 +17,10 @@ public class WorkShopInDTOtoWorkShop implements IMapper<WorkShopInDTO, WorkShop>
         ws.setLocation(in.getLocation());
         ws.setMaterial(in.getMaterial());
         ws.setExecutionDate(in.getExecutionDate());
-        ws.setCreatedDate(LocalDateTime.now());
+        LocalDateTime date = LocalDateTime.now();
+        LocalDateTime date2 = date.withNano(0);
+        LocalDateTime date3 = date2.withSecond(0);
+        ws.setCreatedDate(date3);
         ws.setExecuted(false);
         return ws;
     }

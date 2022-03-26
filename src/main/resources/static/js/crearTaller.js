@@ -1,6 +1,17 @@
- 
+document.addEventListener("DOMContentLoaded", function(event) {
+    let param = window.location.href;
+    console.log(param);
+    if(param.endsWith("?"))
+    {
+        location.href = "../index.html";
+    }
+    
+});
+
 async function crearTaller()
 {
+    
+    
     let datos = {};
     datos.title = document.getElementById('txtTitle').value;
     datos.description = document.getElementById('txtDescription').value;
@@ -15,7 +26,7 @@ async function crearTaller()
     }
 
     //espera a la petición url por el get y indica que es contenido de tipo json
-    const request = await fetch('workshop', {
+    const request = await fetch('../workshop', {
         method: 'POST',
         headers: {
             'Accept': 'application/json',
@@ -28,4 +39,5 @@ async function crearTaller()
         location.href = '../index.html';
     });
     window.location.href = '../index.html';
+
 }

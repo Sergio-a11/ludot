@@ -21,7 +21,7 @@ async function cargarTalleres()
     const talleres = await request.json();
 
 
-    let listadoTallers = '';
+    let listadoTalleres = '';
     for(let t of talleres)
     {
         let date = new Date(t.executionDate);
@@ -44,10 +44,10 @@ async function cargarTalleres()
             </ul>
         </div>
         <hr class="dropdown-divider">`;
-        listadoTallers += esquema;
+        listadoTalleres += esquema;
     }
     //Seleccionar un elemento HTML de la forma que se hace en css
-    document.querySelector('#talleres').outerHTML = listadoTallers;
+    document.querySelector('#talleres').outerHTML = listadoTalleres;
 
     console.log(talleres);
 }
